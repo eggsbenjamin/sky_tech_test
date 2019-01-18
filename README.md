@@ -14,7 +14,7 @@ Create an order service that interacts with a pre-existing order process service
 
 The order process service takes care of managing the lifecycle of an order process e.g. handling payments, inventory, shipping etc...
 
-The order service should allow provide functionality for creating and querying orders.
+The order service should allow functionality for creating and querying orders.
 
 An order can be in one of the following states:
   - CREATED
@@ -22,7 +22,7 @@ An order can be in one of the following states:
   - FULFILLED
   - FAILED
 
-When an order is first created should have the status CREATED.
+When an order is first created it should have the status CREATED.
 
 When the order is processing (i.e an order process belonging to the order has been created) it should have the status PROCESSING.
 
@@ -92,3 +92,14 @@ Creates and executes an order process.
 ##### Parameters
 
 `callback_url` (optional) - a url to post the result of the process to on completion. Must be fully qualified including scheme!
+
+If supplied, the callback URL will receive zero or more http POST requests with the following payload:
+
+```
+{
+  "order_id" : "<ORDER_ID>",
+  "status" : "<ORDER_PROCESS_STATUS>"
+}
+```
+
+A 200 ok response must be returned to indicate that the message has been successfully received.
