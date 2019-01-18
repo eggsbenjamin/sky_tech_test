@@ -1,13 +1,5 @@
 ## Tech Test
 
-This test is designed to test a candidate's ability to:
-  - handle different kinds of request (sync/async)
-  - handle idempotency
-  - architect a service
-  - choose appropriate technologies
-  - write reable/maintainable code
-  - write appropriate tests
-
 ## Task
 
 Create an order service that interacts with a pre-existing order process service.
